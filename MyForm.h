@@ -1,6 +1,8 @@
 #pragma once
 #include <math.h>
 #include "model.h"
+#include "model2x.h"
+#include <string>
 
 
 namespace Graph {
@@ -70,6 +72,11 @@ namespace Graph {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ u;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ uv;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::Label^ label9;
 
 
 
@@ -122,6 +129,11 @@ namespace Graph {
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -142,7 +154,7 @@ namespace Graph {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(633, 386);
+			this->button1->Location = System::Drawing::Point(475, 363);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(142, 29);
 			this->button1->TabIndex = 1;
@@ -157,7 +169,7 @@ namespace Graph {
 				this->X, this->V,
 					this->V2i, this->ViV2i, this->le, this->h, this->C1, this->C2, this->u, this->uv
 			});
-			this->dataGridView1->Location = System::Drawing::Point(572, 30);
+			this->dataGridView1->Location = System::Drawing::Point(558, 30);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->Size = System::Drawing::Size(274, 327);
@@ -196,7 +208,6 @@ namespace Graph {
 			this->le->HeaderText = L"ОЛП";
 			this->le->Name = L"le";
 			this->le->ReadOnly = true;
-			this->le->Width = 100;
 			// 
 			// h
 			// 
@@ -236,15 +247,15 @@ namespace Graph {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(59, 394);
+			this->label1->Location = System::Drawing::Point(4, 398);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(13, 13);
+			this->label1->Size = System::Drawing::Size(28, 13);
 			this->label1->TabIndex = 3;
-			this->label1->Text = L"a";
+			this->label1->Text = L"xmin";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(78, 394);
+			this->textBox1->Location = System::Drawing::Point(38, 394);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(48, 20);
 			this->textBox1->TabIndex = 4;
@@ -253,15 +264,15 @@ namespace Graph {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(171, 396);
+			this->label2->Location = System::Drawing::Point(92, 397);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(13, 13);
+			this->label2->Size = System::Drawing::Size(31, 13);
 			this->label2->TabIndex = 5;
-			this->label2->Text = L"b";
+			this->label2->Text = L"xmax";
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(190, 393);
+			this->textBox2->Location = System::Drawing::Point(119, 394);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(49, 20);
 			this->textBox2->TabIndex = 6;
@@ -270,7 +281,7 @@ namespace Graph {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(287, 398);
+			this->label3->Location = System::Drawing::Point(180, 399);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(13, 13);
 			this->label3->TabIndex = 7;
@@ -278,7 +289,7 @@ namespace Graph {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(306, 394);
+			this->textBox3->Location = System::Drawing::Point(199, 395);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(61, 20);
 			this->textBox3->TabIndex = 8;
@@ -286,7 +297,7 @@ namespace Graph {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(480, 441);
+			this->button2->Location = System::Drawing::Point(338, 456);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(142, 29);
 			this->button2->TabIndex = 9;
@@ -296,7 +307,7 @@ namespace Graph {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(190, 437);
+			this->textBox4->Location = System::Drawing::Point(119, 432);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(49, 20);
 			this->textBox4->TabIndex = 13;
@@ -305,7 +316,7 @@ namespace Graph {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(171, 440);
+			this->label4->Location = System::Drawing::Point(100, 435);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(13, 13);
 			this->label4->TabIndex = 12;
@@ -313,7 +324,7 @@ namespace Graph {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(78, 436);
+			this->textBox5->Location = System::Drawing::Point(38, 432);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(48, 20);
 			this->textBox5->TabIndex = 11;
@@ -322,7 +333,7 @@ namespace Graph {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(59, 438);
+			this->label5->Location = System::Drawing::Point(19, 434);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(13, 13);
 			this->label5->TabIndex = 10;
@@ -330,7 +341,7 @@ namespace Graph {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(306, 437);
+			this->textBox6->Location = System::Drawing::Point(199, 433);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(61, 20);
 			this->textBox6->TabIndex = 15;
@@ -339,7 +350,7 @@ namespace Graph {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(287, 441);
+			this->label6->Location = System::Drawing::Point(180, 437);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(19, 13);
 			this->label6->TabIndex = 14;
@@ -347,16 +358,16 @@ namespace Graph {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(407, 394);
+			this->textBox7->Location = System::Drawing::Point(303, 397);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(61, 20);
 			this->textBox7->TabIndex = 17;
-			this->textBox7->Text = L"1000000";
+			this->textBox7->Text = L"1000";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(373, 397);
+			this->label7->Location = System::Drawing::Point(269, 400);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(34, 13);
 			this->label7->TabIndex = 16;
@@ -367,7 +378,7 @@ namespace Graph {
 			this->checkBox1->AutoSize = true;
 			this->checkBox1->Checked = true;
 			this->checkBox1->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->checkBox1->Location = System::Drawing::Point(387, 435);
+			this->checkBox1->Location = System::Drawing::Point(272, 434);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(46, 17);
 			this->checkBox1->TabIndex = 18;
@@ -376,7 +387,7 @@ namespace Graph {
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(507, 392);
+			this->textBox8->Location = System::Drawing::Point(405, 397);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(61, 20);
 			this->textBox8->TabIndex = 20;
@@ -385,7 +396,7 @@ namespace Graph {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(477, 395);
+			this->label8->Location = System::Drawing::Point(375, 400);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(24, 13);
 			this->label8->TabIndex = 19;
@@ -393,7 +404,7 @@ namespace Graph {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(633, 441);
+			this->button3->Location = System::Drawing::Point(632, 363);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(142, 29);
 			this->button3->TabIndex = 21;
@@ -401,11 +412,63 @@ namespace Graph {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(475, 400);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(142, 29);
+			this->button4->TabIndex = 22;
+			this->button4->Text = L"Draw_Second_Task_U";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(632, 400);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(142, 29);
+			this->button5->TabIndex = 23;
+			this->button5->Text = L"Draw_Second_Task_V";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(632, 456);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(142, 29);
+			this->button6->TabIndex = 24;
+			this->button6->Text = L"Draw_Second_Task_UV";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(199, 465);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(61, 20);
+			this->textBox9->TabIndex = 26;
+			this->textBox9->Text = L"2";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(180, 469);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(19, 13);
+			this->label9->TabIndex = 25;
+			this->label9->Text = L"u0";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(858, 497);
+			this->Controls->Add(this->textBox9);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->label8);
@@ -507,6 +570,9 @@ namespace Graph {
 			dataGridView1->Rows[i]->Cells[9]->Value = floor(abs(u_test(x[i], v0) - v[i]) * 1000) / 1000;
 
 		}
+
+
+
 		LineItem Curve1 = panel->AddCurve("V_test(Xn)", f1_list, Color::Red, SymbolType::Plus);
 		LineItem Curve2 = panel->AddCurve("U_test(X)", f2_list, Color::Blue, SymbolType::None);
 		/*
@@ -564,6 +630,274 @@ namespace Graph {
 
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		GraphPane^ panel = zedGraphControl1->GraphPane;
+		panel->CurveList->Clear();
+		PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
+
+		// Интервал, где есть данные
+		double xmin = Convert::ToDouble(textBox1->Text);
+		double xmax = Convert::ToDouble(textBox2->Text);
+
+		double h0 = Convert::ToDouble(textBox3->Text);
+		double v0 = Convert::ToDouble(textBox6->Text);
+		int Nmax = Convert::ToInt32(textBox7->Text);
+		bool reg = this->checkBox1->Checked;
+
+		double eps = Convert::ToDouble(textBox8->Text);
+
+		double xmin_limit = xmin - 0.1;
+		double xmax_limit = xmax + 0.1;
+		/*
+				double ymin_limit = -1.0;
+				double ymax_limit = 100.0;
+		*/
+		// Список точек
+		//int i = 0;
+
+		dataGridView1->Rows->Clear();
+		Model model(xmin, xmax, v0, h0, Nmax, reg, f, eps);
+		model.solve();
+		vector<vector<double>> ans = model.get_ans();
+		vector<double> x = ans[0];
+		vector<double> v = ans[1];
+		vector<double> v2 = ans[2];
+		vector<double> le = ans[3];
+		vector<double> h = ans[4];
+		vector<double> c1 = ans[5];
+		vector<double> c2 = ans[6];
+
+		for (int i = 0; i < model.n; ++i)
+		{
+			f1_list->Add(x[i], v[i]);
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = x[i];
+			dataGridView1->Rows[i]->Cells[1]->Value = floor(v[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[2]->Value = floor(v2[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[3]->Value = floor((v[i] - v2[i]) * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[4]->Value = floor(le[i] * 100000) / 100000;
+			dataGridView1->Rows[i]->Cells[5]->Value = floor(h[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[6]->Value = floor(c1[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[7]->Value = floor(c2[i] * 1000) / 1000;
+
+
+		}
+		LineItem Curve1 = panel->AddCurve("V(Xn)", f1_list, Color::Red, SymbolType::Plus);
+		/*
+		for (double x = xmin; x <= xmax; x += h)
+		{
+			//Добавление на график
+			f1_list->Add(x, f1(x));
+			f2_list->Add(x, f2(x));
+
+			//Печать в таблицу
+
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = x;
+			dataGridView1->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+			i++;
+		}
+		LineItem Curve1 = panel->AddCurve("F1(x)", f1_list, Color::Red,SymbolType::Plus);
+		LineItem Curve2 = panel->AddCurve("F2(x)", f2_list, Color::Blue, SymbolType::None);
+		*/
+		// Устанавливаем интересующий нас интервал по оси X
+		panel->XAxis->Scale->Min = xmin_limit;
+		panel->XAxis->Scale->Max = xmax_limit;
+		/*
+				// Устанавливаем интересующий нас интервал по оси Y
+				panel->YAxis->Scale->Min = ymin_limit;
+				panel->YAxis->Scale->Max = ymax_limit;
+		*/
+		// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
+		// В противном случае на рисунке будет показана только часть графика, 
+		// которая умещается в интервалы по осям, установленные по умолчанию
+		zedGraphControl1->AxisChange();
+		// Обновляем график
+		zedGraphControl1->Invalidate();
+
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		GraphPane^ panel = zedGraphControl1->GraphPane;
+		panel->CurveList->Clear();
+		PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
+
+		// Интервал, где есть данные
+		double xmin = Convert::ToDouble(textBox1->Text);
+		double xmax = Convert::ToDouble(textBox2->Text);
+		double a = Convert::ToDouble(textBox5->Text);
+		double b = Convert::ToDouble(textBox4->Text);
+		double h0 = Convert::ToDouble(textBox3->Text);
+		double v0 = Convert::ToDouble(textBox6->Text);
+		double u0 = Convert::ToDouble(textBox9->Text);
+		int Nmax = Convert::ToInt32(textBox7->Text);
+		bool reg = this->checkBox1->Checked;
+
+		double eps = Convert::ToDouble(textBox8->Text);
+
+		double xmin_limit = xmin - 0.1;
+		double xmax_limit = xmax + 0.1;
+		/*
+				double ymin_limit = -1.0;
+				double ymax_limit = 100.0;
+		*/
+		// Список точек
+		//int i = 0;
+
+		dataGridView1->Rows->Clear();
+		Model2x model(xmin, xmax, a, b, u0, v0, h0, Nmax, reg, g, eps);
+		model.solve();
+		vector<vector<double>> ans = model.get_ans();
+		vector<double> x = ans[0];
+		vector<double> u = ans[1];
+		vector<double> v = ans[2];
+		vector<double> v2 = ans[3];
+		vector<double> le = ans[4];
+		vector<double> h = ans[5];
+		vector<double> c1 = ans[6];
+		vector<double> c2 = ans[7];
+
+		for (int i = 0; i < model.n; ++i)
+		{
+			f1_list->Add(x[i], u[i]);
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = x[i];
+			dataGridView1->Rows[i]->Cells[1]->Value = floor(v[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[2]->Value = floor(v2[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[3]->Value = floor((v[i] - v2[i]) * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[4]->Value = floor(le[i] * 100000) / 100000;
+			dataGridView1->Rows[i]->Cells[5]->Value = floor(h[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[6]->Value = floor(c1[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[7]->Value = floor(c2[i] * 1000) / 1000;
+
+
+		}
+		LineItem Curve1 = panel->AddCurve("U(Xn)", f1_list, Color::Red, SymbolType::Plus);
+		/*
+		for (double x = xmin; x <= xmax; x += h)
+		{
+			//Добавление на график
+			f1_list->Add(x, f1(x));
+			f2_list->Add(x, f2(x));
+
+			//Печать в таблицу
+
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = x;
+			dataGridView1->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+			i++;
+		}
+		LineItem Curve1 = panel->AddCurve("F1(x)", f1_list, Color::Red,SymbolType::Plus);
+		LineItem Curve2 = panel->AddCurve("F2(x)", f2_list, Color::Blue, SymbolType::None);
+		*/
+		// Устанавливаем интересующий нас интервал по оси X
+		panel->XAxis->Scale->Min = xmin_limit;
+		panel->XAxis->Scale->Max = xmax_limit;
+		/*
+				// Устанавливаем интересующий нас интервал по оси Y
+				panel->YAxis->Scale->Min = ymin_limit;
+				panel->YAxis->Scale->Max = ymax_limit;
+		*/
+		// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
+		// В противном случае на рисунке будет показана только часть графика, 
+		// которая умещается в интервалы по осям, установленные по умолчанию
+		zedGraphControl1->AxisChange();
+		// Обновляем график
+		zedGraphControl1->Invalidate();
+	}
+
+
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		GraphPane^ panel = zedGraphControl1->GraphPane;
+		panel->CurveList->Clear();
+		PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
+
+		// Интервал, где есть данные
+		double xmin = Convert::ToDouble(textBox1->Text);
+		double xmax = Convert::ToDouble(textBox2->Text);
+		double a = Convert::ToDouble(textBox5->Text);
+		double b = Convert::ToDouble(textBox4->Text);
+		double h0 = Convert::ToDouble(textBox3->Text);
+		double v0 = Convert::ToDouble(textBox6->Text);
+		double u0 = Convert::ToDouble(textBox9->Text);
+		int Nmax = Convert::ToInt32(textBox7->Text);
+		bool reg = this->checkBox1->Checked;
+
+		double eps = Convert::ToDouble(textBox8->Text);
+
+		double xmin_limit = xmin - 0.1;
+		double xmax_limit = xmax + 0.1;
+		/*
+				double ymin_limit = -1.0;
+				double ymax_limit = 100.0;
+		*/
+		// Список точек
+		//int i = 0;
+
+		dataGridView1->Rows->Clear();
+		Model2x model(xmin, xmax, a, b, u0, v0, h0, Nmax, reg, g, eps);
+		model.solve();
+		vector<vector<double>> ans = model.get_ans();
+		vector<double> x = ans[0];
+		vector<double> u = ans[1];
+		vector<double> v = ans[2];
+		vector<double> v2 = ans[3];
+		vector<double> le = ans[4];
+		vector<double> h = ans[5];
+		vector<double> c1 = ans[6];
+		vector<double> c2 = ans[7];
+
+		for (int i = 0; i < model.n; ++i)
+		{
+			f1_list->Add(x[i], v[i]);
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = x[i];
+			dataGridView1->Rows[i]->Cells[1]->Value = floor(v[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[2]->Value = floor(v2[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[3]->Value = floor((v[i] - v2[i]) * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[4]->Value = floor(le[i] * 100000) / 100000;
+			dataGridView1->Rows[i]->Cells[5]->Value = floor(h[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[6]->Value = floor(c1[i] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[7]->Value = floor(c2[i] * 1000) / 1000;
+
+
+		}
+		LineItem Curve1 = panel->AddCurve("V(Xn)", f1_list, Color::Red, SymbolType::Plus);
+		/*
+		for (double x = xmin; x <= xmax; x += h)
+		{
+			//Добавление на график
+			f1_list->Add(x, f1(x));
+			f2_list->Add(x, f2(x));
+
+			//Печать в таблицу
+
+			dataGridView1->Rows->Add();
+			dataGridView1->Rows[i]->Cells[0]->Value = x;
+			dataGridView1->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+			i++;
+		}
+		LineItem Curve1 = panel->AddCurve("F1(x)", f1_list, Color::Red,SymbolType::Plus);
+		LineItem Curve2 = panel->AddCurve("F2(x)", f2_list, Color::Blue, SymbolType::None);
+		*/
+		// Устанавливаем интересующий нас интервал по оси X
+		panel->XAxis->Scale->Min = xmin_limit;
+		panel->XAxis->Scale->Max = xmax_limit;
+		/*
+				// Устанавливаем интересующий нас интервал по оси Y
+				panel->YAxis->Scale->Min = ymin_limit;
+				panel->YAxis->Scale->Max = ymax_limit;
+		*/
+		// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
+		// В противном случае на рисунке будет показана только часть графика, 
+		// которая умещается в интервалы по осям, установленные по умолчанию
+		zedGraphControl1->AxisChange();
+		// Обновляем график
+		zedGraphControl1->Invalidate();
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 		   GraphPane^ panel = zedGraphControl1->GraphPane;
 		   panel->CurveList->Clear();
 		   PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
@@ -571,9 +905,11 @@ namespace Graph {
 		   // Интервал, где есть данные
 		   double xmin = Convert::ToDouble(textBox1->Text);
 		   double xmax = Convert::ToDouble(textBox2->Text);
-
+		   double a = Convert::ToDouble(textBox5->Text);
+		   double b = Convert::ToDouble(textBox4->Text);
 		   double h0 = Convert::ToDouble(textBox3->Text);
 		   double v0 = Convert::ToDouble(textBox6->Text);
+		   double u0 = Convert::ToDouble(textBox9->Text);
 		   int Nmax = Convert::ToInt32(textBox7->Text);
 		   bool reg = this->checkBox1->Checked;
 
@@ -589,20 +925,21 @@ namespace Graph {
 		   //int i = 0;
 
 		   dataGridView1->Rows->Clear();
-		   Model model(xmin, xmax, v0, h0, Nmax, reg, f, eps);
+		   Model2x model(xmin, xmax, a, b, u0, v0, h0, Nmax, reg, g, eps);
 		   model.solve();
 		   vector<vector<double>> ans = model.get_ans();
 		   vector<double> x = ans[0];
-		   vector<double> v = ans[1];
-		   vector<double> v2 = ans[2];
-		   vector<double> le = ans[3];
-		   vector<double> h = ans[4];
-		   vector<double> c1 = ans[5];
-		   vector<double> c2 = ans[6];
+		   vector<double> u = ans[1];
+		   vector<double> v = ans[2];
+		   vector<double> v2 = ans[3];
+		   vector<double> le = ans[4];
+		   vector<double> h = ans[5];
+		   vector<double> c1 = ans[6];
+		   vector<double> c2 = ans[7];
 
 		   for (int i = 0; i < model.n; ++i)
 		   {
-			   f1_list->Add(x[i], v[i]);
+			   f1_list->Add(u[i], v[i]);
 			   dataGridView1->Rows->Add();
 			   dataGridView1->Rows[i]->Cells[0]->Value = x[i];
 			   dataGridView1->Rows[i]->Cells[1]->Value = floor(v[i] * 1000) / 1000;
@@ -615,7 +952,7 @@ namespace Graph {
 
 
 		   }
-		   LineItem Curve1 = panel->AddCurve("V(Xn)", f1_list, Color::Red, SymbolType::Plus);
+		   LineItem Curve1 = panel->AddCurve("V(Un)", f1_list, Color::Red, SymbolType::Plus);
 		   /*
 		   for (double x = xmin; x <= xmax; x += h)
 		   {
@@ -648,7 +985,6 @@ namespace Graph {
 		   zedGraphControl1->AxisChange();
 		   // Обновляем график
 		   zedGraphControl1->Invalidate();
-
 	}
 };
 }

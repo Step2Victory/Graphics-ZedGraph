@@ -90,7 +90,7 @@ double f_test(double x, double v)
 
 double f(double x, double v)
 {
-	return x / (1 + x * x);
+	return x / (1 + x * x) * v * v + v - v * v * v * sin(10*x);
 }
 
 double Model::RK4_iter(double x, double v, double h)

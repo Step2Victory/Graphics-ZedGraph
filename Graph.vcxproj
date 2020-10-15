@@ -145,11 +145,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="model2x.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="model.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="first_task.h" />
+    <ClInclude Include="model2x.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
